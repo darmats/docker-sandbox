@@ -1,11 +1,8 @@
-version: 2.1
-executors:
-  alpine:
-    docker:
-      - image: darmats/php-ruby:php5.6-ruby2.4-alpine
+version: 2
 
 jobs:
-  alpine:
-    executor: alpine
+  build:
+    docker:
+      - image: darmats/php-ruby:php5.6-ruby2.4-alpine
     steps:
       - checkout
