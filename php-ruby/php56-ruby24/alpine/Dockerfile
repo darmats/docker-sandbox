@@ -118,6 +118,8 @@ RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
 # (BUNDLE_PATH = GEM_HOME, no need to mkdir/chown both)
 
 
-RUN docker-php-ext-install pcntl
-RUN mkdir -p /usr/local/src
+RUN set -ex \
+	&& apk add git openssh \
+	&& docker-php-ext-install pcntl \
+	&& mkdir -p /usr/local/src
 WORKDIR /usr/local/src
