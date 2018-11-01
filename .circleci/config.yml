@@ -20,5 +20,5 @@ workflows:
   version: 2
   checkout:
     jobs:
-      - tasl1
-      - tasl2
+      - task1
+      - task2
