@@ -1,12 +1,17 @@
 version: 2
 
 jobs:
-  block:
+  task1:
     docker:
       - image: darmats/php-ruby:php5.6-ruby2.4-alpine
     steps:
       - checkout
-  co:
+  task2:
+    docker:
+      - image: darmats/php-ruby:php5.6-ruby2.4-alpine
+    steps:
+      - checkout
+  task3:
     docker:
       - image: darmats/php-ruby:php5.6-ruby2.4-alpine
     steps:
@@ -15,4 +20,5 @@ workflows:
   version: 2
   checkout:
     jobs:
-      - co
+      - tasl1
+      - tasl2
