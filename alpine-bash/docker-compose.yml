@@ -1,0 +1,6 @@
+version: '3'
+services:
+  '3.8':
+    build:
+      context: '3.8'
+    image: darmats/alpine-bash:3.8
