@@ -8,3 +8,7 @@ character_set_server=${CHARASET}\n\
 ;[client]\n\
 ;default-character-set=${CHARASET}\n\
 " > /etc/mysql/mysql.conf.d/charaset.cnf
+
+RUN set -ex \
+    # for docker-machine
+    && usermod -u 1000 mysql

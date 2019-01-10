@@ -6,9 +6,13 @@ services:
       args:
         - CHARASET=utf8
     image: darmats/mysql:5.7-utf8
+    volumes:
+      - ./5.7/logs/utf8:/var/log/mysql
   '5.7-utf8mb4':
     build:
       context: '5.7'
       args:
         - CHARASET=utf8mb4
     image: darmats/mysql:5.7-utf8mb4
+    volumes:
+      - ./5.7/logs/utf8mb4:/var/log/mysql
