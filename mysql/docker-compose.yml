@@ -4,11 +4,11 @@ services:
     build:
       context: '5.7'
       args:
-        - CHARSET=utf8
+        - CHARASET=utf8
     image: darmats/mysql:5.7-utf8
   '5.7-utf8mb4':
     build:
       context: '5.7'
       args:
-        - CHARSET=utf8mb4
+        - CHARASET=utf8mb4
     image: darmats/mysql:5.7-utf8mb4
