@@ -1,8 +1,7 @@
 FROM alpine:3.8
 
 RUN set -ex \
-    && apk add bash \
-    && rm -rf /var/cache/apk/*
+    && apk --update --no-cache add bash
 
 RUN set -ex \
     && echo "alias cp='cp -i'" >> ~/.bashrc \

@@ -119,7 +119,7 @@ RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
 
 
 RUN set -ex \
-	&& apk add git openssh \
+	&& apk add --no-cache git openssh \
 	&& docker-php-ext-install pcntl \
 	&& mkdir -p /usr/local/src
 WORKDIR /usr/local/src
