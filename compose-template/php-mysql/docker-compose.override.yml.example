@@ -1,0 +1,12 @@
+version: '3'
+services:
+  app:
+    ports:
+      - '80:80'
+  db:
+    command: 'mysqld
+      --general-log=1
+      --general-log-file=/var/log/mysql/general.log
+    '
+    ports:
+      - '3306:3306'

@@ -1,0 +1,35 @@
+version: '3'
+services:
+  app:
+    build:
+      context: docker/app
+    expose:
+      - 80
+    volumes:
+      - .:/src
+    working_dir: /src
+    entrypoint: ['sh', '/src/docker/app/entrypoint.sh']
+    environment:
+      APACHE_DOCUMENT_ROOT: /src/dummy-public
+      XDEBUG_CONFIG: '
+        remote_enable=1
+        remote_autostart=1
+        remote_connect_back=1
+        remote_port=9000
+      '
+    links:
+      - db
+  db:
+    image: darmats/mysql:5.7
+    expose:
+      - 3306
+    volumes:
+      - db-data:/var/lib/mysql
+      - ./docker/db/logs:/var/log/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: dummy
+      TZ: Asia/Tokyo
+
+volumes:
+  db-data:
