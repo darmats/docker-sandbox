@@ -4,3 +4,7 @@ services:
     build:
       context: '3.8'
     image: darmats/alpine-bash:3.8
+  '3.9':
+    build:
+      context: '3.9'
+    image: darmats/alpine-bash:3.9
