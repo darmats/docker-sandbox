@@ -1,0 +1,11 @@
+version: '3'
+services:
+  aws:
+    build:
+      context: cli
+    image: darmats/aws-cli
+  sam:
+    build:
+      context: sam-cli
+    image: darmats/aws-sam-cli
+    privileged: true
